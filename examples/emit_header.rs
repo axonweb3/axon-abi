@@ -1,5 +1,5 @@
 use axon_abi::builder::CkbHeaderBuilder;
-use axon_abi::HeaderUpdateCall;
+use axon_abi::{address::CKB_LIGHT_CLIENT_CONTRACT_ADDRESS, HeaderUpdateCall};
 use ckb_jsonrpc_types::BlockView;
 use ethers::types::transaction::eip2718::TypedTransaction;
 use ethers::{signers::Wallet, types::H160};
@@ -39,7 +39,7 @@ fn main() {
 
     let mut tx_req = TypedTransaction::default();
     tx_req.set_from(H160::random());
-    tx_req.set_to(H160::random());
+    tx_req.set_to(CKB_LIGHT_CLIENT_CONTRACT_ADDRESS);
     tx_req.set_gas(21000u32);
     tx_req.set_gas_price(1u32);
     tx_req.set_data(call.abi_encode().into());

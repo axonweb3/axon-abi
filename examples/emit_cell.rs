@@ -1,5 +1,5 @@
 use axon_abi::builder::{CellInfoBuilder, CellOutputBuilder, OutPointBuilder};
-use axon_abi::{CellBlockUpdate, CellUpdateCall};
+use axon_abi::{address::IMAGE_CELL_CONTRACT_ADDRESS, CellBlockUpdate, CellUpdateCall};
 use ckb_jsonrpc_types::TransactionView;
 use ethers::types::transaction::eip2718::TypedTransaction;
 use ethers::{signers::Wallet, types::H160};
@@ -61,7 +61,7 @@ fn main() {
 
     let mut tx_req = TypedTransaction::default();
     tx_req.set_from(H160::random());
-    tx_req.set_to(H160::random());
+    tx_req.set_to(IMAGE_CELL_CONTRACT_ADDRESS);
     tx_req.set_gas(21000u32);
     tx_req.set_gas_price(1u32);
     tx_req.set_data(call.abi_encode().into());
