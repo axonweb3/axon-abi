@@ -4,10 +4,11 @@ version = "0.0.1"
 edition = "2021"
 authors = ["Axon Dev <axon@axonweb3.io>"]
 license = "MIT"
-include = ["src/*", "README.md", "LICENSE"]
+include = ["src/*", "README.md", "LICENSE", "Cargo.toml"]
+exclude = ["examples"]
 readme = "README.md"
-keywords = ["axon", "abi"]
-categories = ["cryptography"]
+keywords = ["axon", "abi", "ethers", "web3"]
+categories = ["cryptography::cryptocurrencies"]
 repository = "https://github.com/axonweb3/axon-abi"
 description = """
 Axon system contract ABI encode tools.
